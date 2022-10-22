@@ -174,7 +174,7 @@ def pembayaran():
                 print("Inputan Anda Tidak Sesuai")
                 time.sleep(1)
 
-       while(nominalTf < totalHargaTiket):
+        while(nominalTf < totalHargaTiket):
             print("")
             print("Uang yang Anda Masukkan Kurang! Silakan Masukkan Uang Kembali")
             time.sleep(1)
