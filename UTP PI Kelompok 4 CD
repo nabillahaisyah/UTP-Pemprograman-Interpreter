@@ -101,8 +101,7 @@ def pembayaran():
                 print("")  
                 print("Input yang Anda Masukkan Tidak Sesuai!")
                 time.sleep(1)
-        
-        
+                
         while(totalBayarCash < totalHargaTiket):
             while True:          
                 print("")
