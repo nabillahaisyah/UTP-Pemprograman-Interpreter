@@ -126,10 +126,9 @@ def pembayaran():
         time.sleep(1)
         header()
 
-        print("Uang Anda :", totalBayarCash)
+        print("Uang Anda : ", totalBayarCash)
         print("Kembalian anda: ", kembalian)
         print("Pembayaran Anda Berhasil")
-
         header()
 
         print("=======================================")
@@ -153,13 +152,13 @@ def pembayaran():
     elif (metodePembayaran == 2):
         header()
         display()
-        print("Total Harga Tiket :", totalHargaTiket)
+        print("Total Harga Tiket : ", totalHargaTiket)
         print("Transfer Ke Rekening Dana 081234567890")
         print("")
         print("Nama: ", nama)
         print("Umur: ", umur)
         print("jenis Tiket: ", jenisTiket)
-        print("Total Harga Tiket : ", totalHargaTiket)
+        print("Total Harga Tiket: ", totalHargaTiket)
         print("")
         print("Tolong cek ulang nominal pembayaran yang anda inputkan,")
         print("karena nominal yang sudah dikirim tidak dapat dikembalikan lagi!!")
