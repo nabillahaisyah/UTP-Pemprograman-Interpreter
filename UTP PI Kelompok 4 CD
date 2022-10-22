@@ -209,3 +209,42 @@ def pembayaran():
         print("")
         print("                HAVE FUN")
         print("")
+#------------------------------------------------------------------------------
+
+#FUNGSI MAIN
+
+pengunjung()
+
+for i in range(0, jumlahPengunjung):
+    while True:
+        header()
+        display()
+        print("Pengunjung ", i+1)                       #OPERATOR ARITMATIKA
+        try:
+            jenisTiket =int(input("Jenis Tiket\t: "))
+            if jenisTiket < 1 or jenisTiket > 3:
+                raise ValueError                        #ERROR HANDLING
+            break
+        except ValueError:                              #ERROR HANDLING 
+            print("")
+            print("Input yang Anda Masukkan Tidak Sesuai!") 
+            time.sleep(1)
+
+    match jenisTiket:
+        case 1:
+            tiketFastTrack += 1
+        case 2:
+            tiketRegulerA += 1
+        case 3:
+            tiketRegulerB += 1   
+    
+    nama.append(input("Nama\t\t: "))                    #METHOD APPEND LIST
+    umur.append(input("Umur\t\t: "))
+    nomorTelepon.append(input("Nomor Telepon\t: "))
+    nama[i] = nama[i].capitalize()                      #STRING METHOD UPPER
+    i =+ 1                                              #OPERATOR ASSIGNMENT
+    time.sleep(1)
+
+metodeBayar()
+
+pembayaran()
