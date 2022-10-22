@@ -63,6 +63,26 @@ def pesanan():
     print("Total Harga Tiket : " , totalHargaTiket)
     print("")
 
+#FUNGSI METODEBAYAR()
+def metodeBayar():
+    global metodePembayaran
+    while True:
+        header()
+        display()
+        pesanan()
+        print("Pilih Metode Pembayaran : ")
+        print("1. Cash")
+        print("2. Cashless")
+        try:      
+            metodePembayaran = int(input("Metode Pembayaran : "))
+            if metodePembayaran < 1 or metodePembayaran > 2:
+                raise ValueError
+            break
+        except ValueError:
+            print(" ")
+            print("Input yang Anda Masukkan Tidak Sesuai!")
+            time.sleep(1)
+    time.sleep(1)
 
 #FUNGSI PEMBAYARAN()
 def pembayaran():
