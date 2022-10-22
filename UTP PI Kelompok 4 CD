@@ -1,3 +1,89 @@
+#IMPORT
+import time
+import os
+
+#DEKLARASI VARIABEL
+fastTrack = 600000
+regulerA = 500000
+regulerB = 350000
+
+#DEKLARASI LIST
+nama = []  
+umur = []
+nomorTelepon = []
+tiketFastTrack = 0
+tiketRegulerA = 0
+tiketRegulerB = 0
+
+#FUNGSI HEADER()
+def header():
+    os.system('cls')
+    print(" __ _   _  _   _   _  _   _  _ __ _ _   _ _    _   _  _     _   _  _ ")
+    print("|_   /\ |  \/  | /\ | \| | | || | | _ ) | | | _ \  /\ | \| |   /\ | _ )/ _|")
+    print("  | |/ _ \| |\/| |/ _ \| .` | | _ || || _ \ || |   / / _ \| .` |  / _ \| _ \ (__ ")
+    print("  |// \_\_|  |// \_\_|\_| ||||_|_/\__/||\// \_\_|\_| // \\__/\__|")
+    print("")
+
+# FUNGSI JUMLAH PENGUNJUNG()
+def pengunjung():
+    global jumlahPengunjung
+    while True:
+        header()
+        time.sleep(1)
+        try:                                                 
+            jumlahPengunjung = int(input("Jumlah Pengunjung : ")) 
+            if jumlahPengunjung <=0:
+                raise ValueError                                    #ERROR HANDLING 
+            break
+        except ValueError:
+            print("")                                       #ERROR HANDLING 
+            print("Input yang Anda Masukkan Salah!")  
+            time.sleep(1)
+    time.sleep(1)
+
+#FUNGSI DISPLAY()
+def display():
+    print("==================================================================================")
+    print("||                            Jenis Tiket :                                     ||")
+    print("|| 1. Fast Track (Tiket Bebas Antre Include Semua Wahana)                       ||")
+    print("|| 2. Reguler A  (Tiket Tanpa Bebas Antre Include Semua Wahana)                 ||")
+    print("|| 3. Reguler B  (Tiket Tanpa Bebas Antre Tidak Full Include Semua Wahana)      ||")
+    print("==================================================================================")
+    print("")
+
+#FUNGSI PESANAN()
+def pesanan():
+    global totalHargaTiket
+    print("Total Tiket Yang Dipesan : ")
+    print("Fast Track =" , tiketFastTrack , "x 600000")
+    print("Reguler A  =" , tiketRegulerA , "x 500000")
+    print("Reguler B  =" , tiketRegulerB , "x 350000")
+    print("")
+    totalHargaTiket = (tiketFastTrack * 600000) + (tiketRegulerA * 500000) + (tiketRegulerB * 350000)
+    print("Total Harga Tiket : " , totalHargaTiket)
+    print("")
+
+#FUNGSI METODEBAYAR()
+def metodeBayar():
+    global metodePembayaran
+    while True:
+        header()
+        display()
+        pesanan()
+        print("Pilih Metode Pembayaran : ")
+        print("1. Cash")
+        print("2. Cashless")
+        try:      
+            metodePembayaran = int(input("Metode Pembayaran : "))
+            if metodePembayaran < 1 or metodePembayaran > 2:
+                raise ValueError
+            break
+        except ValueError:
+            print(" ")
+            print("Input yang Anda Masukkan Tidak Sesuai!")
+            time.sleep(1)
+    time.sleep(1)
+
 #FUNGSI PEMBAYARAN()
 def pembayaran():
     if (metodePembayaran == 1):
