@@ -1,1 +1,91 @@
-F
+#FUNGSI PEMBAYARAN()
+def pembayaran():
+    if (metodePembayaran == 1):
+        while True:      
+            try:
+                header()
+                display()
+                pesanan()
+                print("Masukkan Uang Sesuai dengan Total Pembayaran")
+                totalBayarCash = int(input("Masukkan Uang :"))        
+                if totalBayarCash <= 0 :
+                    raise ValueError
+                break
+            except ValueError:
+                print("")  
+                print("Input yang Anda Masukkan Tidak Sesuai!")
+                time.sleep(1)
+        
+        
+        while(totalBayarCash < totalHargaTiket):
+            while True:          
+                print("")
+                print("Uang yang Anda Masukkan Kurang! Silakan Masukkan Uang Kembali")
+                time.sleep(1)
+                print("")
+                kurangBayar = totalHargaTiket - totalBayarCash
+                print("Uang Kurang Sebanyak :", kurangBayar)
+                try:
+                    bayarCash = int(input("Bayar :"))
+                    if bayarCash <= 0 :
+                        raise ValueError
+                    break
+                except ValueError:
+                    print("")
+                    print("Inputan Anda Tidak Sesuai!")
+                    time.sleep(1)       
+            totalBayarCash += bayarCash
+
+        kembalian=totalBayarCash-totalHargaTiket
+
+        time.sleep(1)
+        header()
+
+        print("Uang Anda :", totalBayarCash)
+        print("Kembalian anda: ", kembalian)
+        print("Pembayaran Anda Berhasil")
+
+        header()
+
+        print("=======================================")
+        print("================ STRUK ================")
+        print("=======================================")
+        print("Nama              :", nama)
+        print("Umur              :", umur)
+        print("Total Tiket       :", jumlahPengunjung)
+        print("Total Harga Tiket :", totalHargaTiket)
+        print("Bayar             :", totalBayarCash)
+        print("Kembalian anda    :", kembalian)
+        print("=======================================")
+        print("")
+        print("        Pembayaran Anda Berhasil")
+        print("")
+        print("--------------Terima Kasih-------------")
+        print("")
+        print("                HAVE FUN")
+        print("")
+
+    elif (metodePembayaran == 2):
+        header()
+        display()
+        print("Total Harga Tiket :", totalHargaTiket)
+        print("Transfer Ke Rekening Dana 081234567890")
+        print("")
+        print("Nama: ", nama)
+        print("Umur: ", umur)
+        print("jenis Tiket: ", jenisTiket)
+        print("Total Harga Tiket : ", totalHargaTiket)
+        print("")
+        print("Tolong cek ulang nominal pembayaran yang anda inputkan,")
+        print("karena nominal yang sudah dikirim tidak dapat dikembalikan lagi!!")
+        while True:
+            print("")
+            try:
+                nominalTf=int(input("Inputkan nominal transfer: "))
+                if nominalTf <= 0 :
+                    raise ValueError
+                break
+            except ValueError:
+                print("")
+                print("Inputan Anda Tidak Sesuai")
+                time.sleep(1)
